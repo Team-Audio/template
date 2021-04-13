@@ -1,8 +1,8 @@
 # Contribution Guidelines
 
-## C-Sharp & Unity
+## §1 C-Sharp & Unity
 
-### General Guidelines for working with Unity Scripts
+### 1.1 General Guidelines for working with Unity Scripts
 
 - All Scripts must be placed in \<UnityProject\>\Scripts or a subfolder 
 - Scripts should only contain 1 class
@@ -17,13 +17,13 @@
 >}
 >```
 
-### Guidelines for working with C#
+### 1.2 Guidelines for working with C#
 
-- Class-Names should be UpperCamelCase
-- Public member functions should be UpperCamelCase
-- Public member variables should be UpperCamelCase
-- Private member functions should be lowerCamelCase
-- Private member variables should be m_ lowerCamelCase
+1. Class-Names should be UpperCamelCase
+2. Public member functions should be UpperCamelCase
+3. Public member variables should be UpperCamelCase
+4. Private member functions should be lowerCamelCase
+5. Private member variables should be m_ lowerCamelCase
 >For Example:  
 >```csharp
 >class PlayerController  : MonoBehaviour 
@@ -55,7 +55,7 @@
 >}
 >```
 
-- Prefer foreach loops over for loops when possible
+6. Prefer foreach loops over for loops when possible
 >For Example:
 >```csharp
 >public void IterateCollection()
@@ -76,9 +76,9 @@
 >    }
 >}
 
-- Use Plenty of Comments
-  - Explain the Usage of a method, document side-effects
-  - Explain the inner workings of your code
+7. Use Plenty of Comments
+   - Explain the Usage of a method, document side-effects
+   - Explain the inner workings of your code
 
 >For Example:
 >```csharp
@@ -96,11 +96,11 @@
 >```
 
 
-### Guidelines for working with Unity-Scripts
+### 1.3 Guidelines for working with Unity-Scripts
 
-- prefer `[SerializeField] private` over `public` members
-- use `[RequireComponent(typeof())]` over null checks
-- use `[Header()]` and `[Tooltip]` to improve the editor experience.
+1. prefer `[SerializeField] private` over `public` members
+2. use `[RequireComponent(typeof())]` over null checks
+3. use `[Header()]` and `[Tooltip]` to improve the editor experience.
 >For Example:
 >```csharp
 >    [RequireComponent(typeof(MovementController))]
@@ -133,7 +133,7 @@
 >    }
 >```
 
-- Do not iterate the Scene-Graph, use Tags
+4. Do not iterate the Scene-Graph, use Tags
 >For Example:
 >```csharp
 >public GameObject FindPlayer()
@@ -142,7 +142,7 @@
 >}
 >```
 
-- Use CompareTag instead of ==
+5. Use CompareTag instead of `==`
 >For Example:
 >```csharp
 >    public void OnTriggerEnter(Collider other)
@@ -164,7 +164,7 @@
 >    }
 >```
 
-- Make your Code Event-Driven
+6. Make your Code Event-Driven
 >For Example:
 >```csharp
 >    public class CollisionManager {
@@ -217,13 +217,13 @@
 > Take a look at `EventBus.cs` for some more advanced examples
 
 
-## Assets
+## §2 Assets
 
 Assets should use a unified file-structure
 
-### Images
-- Images should live in `Assets/Images` or in a subfolder
-- They should follow the general-guideline of:  
+### 2.1 Images
+1. Images should live in `Assets/Images` or in a subfolder
+2. They should follow the general-guideline of:  
 `descriptive_file_name-<widht>x<height>-rev<revision>.extension`  
     > For example `player_sprite-64x64-rev1.png`
 
@@ -232,16 +232,16 @@ Assets should use a unified file-structure
 
     Use underscores instead of capital letters! It avoids issues with the VCS
 
-### Models
-- Models should live in `Assets/Models` or in a subfolder
-- They should follow the general-guideline of:  
+### 2.2 Models
+1. Models should live in `Assets/Models` or in a subfolder
+2. They should follow the general-guideline of:  
 `descriptive_file_name-rev<revision>.extension`
     > For example `hand_model-rev5.gltf`
 
 
-### Audio
-- Audio should live in `Assets/Audio` or in a subfolder
-- They should follow the general-guideline of:  
+### 2.3 Audio
+1. Audio should live in `Assets/Audio` or in a subfolder
+2. They should follow the general-guideline of:  
 `descriptive_file_name-<channels>-<bits>b-<sample-rate>kHz-rev<revision>.extension`
     > For instance `player_hurt-mono-16b-44.1kHz-rev0.mp3`
 
@@ -251,11 +251,11 @@ Assets should use a unified file-structure
 
 
 
-## Python
+## §3 Python
 [PEP-8](https://www.python.org/dev/peps/pep-0008/), use an IDE like PyCharm. It applies these rules automatically
 
 
-## Working with GIT
+## §4 Working with GIT
 - pull from develop
 - create a new feature-branch with your favourite tool  
 or like this  `git checkout -b feature/my_cool_feature`
@@ -268,6 +268,6 @@ For instance `[IA-2] [ADD] Contribution Guidelines`
 - Apply the requested changes if any
 - merge & delete the branch
 
-### Appendix: Git with Unity
+### 4.1 Appendix: Git with Unity
 - When working on the Unity-Scene make sure to make a copy first.  
  It is much easier to create prefabs then merging diverged Unity-Scenes
